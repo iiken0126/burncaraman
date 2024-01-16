@@ -1,0 +1,291 @@
+@charset "utf-8";
+$sp: 375px; //スマホ
+$pc: 768px; //PC
+$pc1: 1000px; //pc 大画面
+
+@mixin sp {
+    @media (max-width:($sp)) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (max-width:($pc)) {
+        @content;
+    }
+
+}
+
+@mixin pc1 {
+    @media (max-width:($pc1)) {
+        @content;
+    }
+
+}
+@mixin term {
+    display: inline-block;
+    padding: 3px;
+    border: solid 1px black;
+    background-color: white;
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+$white:#F8F8F8; //共有の白
+$gray:#F3F3F3; //共通のグレー（背景色）
+$yellow:#FEDC00; //共通の黄色
+$red:#DC2803;//共通の赤
+$brown:#D94501;//共通の茶色
+.wpcr3_item_name {
+    display: none;
+}
+.club-container {
+    margin: 4rem 1rem 0 1rem;
+    span {
+        margin-top: 0.2rem;
+    }
+    .prefecture {
+        font-size: 1.5rem;
+        margin-top: 5px;
+        span  {
+            font-weight: 700;
+        }
+    }
+    .club-name {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        margin-top: 5px;
+    }
+    .reviewrate_output {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0 5px;
+        }
+        img {
+            width: 8rem;
+        }
+    }
+    .address::before {
+        content: '\f3c5';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        display: inline-block;
+        margin-right: 5px;
+        font-size: 1.5rem;
+    }
+    .address {
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+        .address-inner {
+            margin-left: 5px;
+            font-weight: 600;
+        }
+        .mail-num::before {
+            content: '〒';
+            font-weight: 600;
+        }
+        .mail-num {
+            font-weight: 600;
+        }
+    }
+    .phone::before {
+        font-family: "Font Awesome 5 Free";
+        content: '\f095';
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-right: 5px;
+    }
+    .phone {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
+    .joba-style::before {
+        font-family: "Font Awesome 5 Free";
+        content: '\f7ab';
+        font-weight: 600;
+        margin-right: 5px;
+        font-size: 1.4rem;
+    }
+    .joba-style {
+        margin-top: 5px;
+        span {
+            display: inline-block;
+            padding: 3px;
+            border: solid 1px black;
+            background-color: white;
+            margin-right: 5px;
+            font-weight: 500;
+        }
+    }
+    .feature {
+        margin-top: 5px;
+        span {
+            display: inline-block;
+            padding: 3px;
+            border: solid 1px black;
+            background-color: white;
+            margin-right: 5px;
+            font-weight: 500;
+        }
+        span:nth-child(1) {
+            margin-left: 5px;
+        }
+    }
+    .feature::before {
+        content: '';
+        width: 28px;
+        display: inline-block;
+    }
+    .facility {
+        margin-top: 5px;
+        span {
+            display: inline-block;
+            padding: 3px;
+            border: solid 1px black;
+            background-color: white;
+            margin-right: 5px;
+            font-weight: 500;
+        }
+        span:nth-child(1) {
+            margin-left: 5px;
+        }
+    }
+    .facility::before {
+        content: '';
+        width: 28px;
+        display: inline-block;
+    }
+    .taiken-time {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        span {
+            display: inline-block;
+            padding: 3px;
+            border: solid 1px black;
+            background-color: white;
+            margin-right: 5px;
+            font-weight: 500;
+        }
+        dt {
+            margin-right: 5px;
+            font-weight: 600;
+        }
+    }
+    .price-taiken {
+        margin-top: 5px;
+        display: flex;
+        dt {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        dd {
+            font-weight: 600;
+            color: #D94501;
+        }
+    }
+    .price-nyukai {
+        margin-top: 5px;
+        font-weight: 600;
+        display: flex;
+        color: #D94501;
+        p {
+            font-weight: 600;
+        }
+    }
+    .price-joba {
+        margin-top: 5px;
+        font-weight: 600;
+        color: #D94501;
+        p {
+            font-weight: 600;
+            margin-right: 5px;
+            display: inline-block;
+        }
+    }
+     .tokki {
+        margin-top: 5px;
+        display: grid;
+        grid-template-columns: fit-content(150px) auto;
+        p {
+            margin-right: 5px;
+        }
+        p:first-of-type {
+            font-weight: 600;
+        }
+    }
+    .hp-link {
+        margin-top: 1.5rem;
+        display: block;
+        width: 12rem;
+        height: fit-content;
+        border-radius: 37.5px;
+        background: #fedc00;
+        box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.16);
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 10px 0;
+        font-family: "Yu Gothic";
+        letter-spacing: 0.1em;
+        color: #fff;
+        font-weight: 700;
+    }
+    .club-single-img {
+        margin-top: 20px;
+        img {
+            width: 100%;
+            height:auto;
+        }
+    }
+    .review-icon {
+        border-radius: 37.5px;
+        background: #fedc00;
+        padding: 10px 0;
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+        width: 9rem;
+        margin-top: 20px;
+    }
+}
+.hp-link-tyusyaku {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    .tyusyaku {
+        margin-top: 0.5rem;
+        @include pc {
+            display: none;
+        }
+        p {
+            font-size: 0.6rem;
+            line-height: 1.1;
+        }
+        p:nth-of-type(2),p:nth-of-type(4) {
+            padding-left: 0.6rem;
+        }
+
+    }
+    .tyusyaku-footer {
+        display: none;
+        @include pc {
+            display: block;
+        }
+        p {
+            font-size: 0.6rem;
+            line-height: 1.1;
+        }
+        p:nth-of-type(2),p:nth-of-type(4) {
+            padding-left: 0.6rem;
+        }
+
+    }
+}

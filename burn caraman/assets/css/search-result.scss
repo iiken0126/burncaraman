@@ -1,0 +1,274 @@
+
+@charset "utf-8";
+$sp: 375px; //スマホ
+$pc: 768px; //PC
+$pc1: 1000px; //pc 大画面
+
+@mixin sp {
+    @media (max-width:($sp)) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (max-width:($pc)) {
+        @content;
+    }
+
+}
+
+@mixin pc1 {
+    @media (max-width:($pc1)) {
+        @content;
+    }
+
+}
+
+$white:#F8F8F8; //共有の白
+$gray:#F3F3F3; //共通のグレー（背景色）
+$yellow:#FEDC00; //共通の黄色
+$red:#DC2803;//共通の赤
+$brown:#D94501;//共通の茶色
+
+
+.search-title {
+    margin-top: 3rem;
+    font-weight: 600;
+    text-align: center;
+    span {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
+.center-inner-search {
+    width: 90vw;
+    margin: 0 auto;
+}
+.pagination {
+    margin: 0 1rem;
+    min-height: 125rem;
+    @include pc {
+        margin: 0 -1rem;
+    }
+    .links {
+        margin-top: 1rem;
+    }
+    span {
+        margin-top: 0.2rem;
+        font-size: 0.8rem;
+    }
+    margin-bottom: 2rem;
+    .search-result-content:first-of-type {
+        @include pc {
+            margin-top: 1rem;
+            border-top: none;
+        }
+    }
+    .search-result-content:l-of-type {
+        @include pc {
+            margin-top: 1rem;
+            border-top: none;
+        }
+    }
+    .search-result-content {
+    background: #fff;
+    border: 1px solid #707070;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @include pc {
+        display: block;
+        border: none;
+        border-top: #707070 3px solid;
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .search-result-content-inner-left {
+        line-height: 1.5rem;
+        font-weight: 600;
+        .sr-area {
+            span {
+                font-weight: 600;
+                font-size: 1.2rem;
+        
+            }
+        }
+        .sr-address::before {
+            content: '\f3c5';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 0.2rem;
+            font-size: 1.2rem;
+        }
+        .sr-title {
+            font-size: 1.5rem;
+            color: #1764D7;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+        .reviewrate_output {
+            display: inline-block;
+            span {
+                padding-right: 1rem;
+            }
+            img {
+                width: 8rem;
+            }
+        }
+        .reviewrate_output::before{
+            content: '\f4ad';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 0.2rem;
+            font-size: 1.2rem;
+        }
+        .kensu {
+            color: #1764D7;
+        }
+        .sr-phone-num::before {
+            content: '\f095';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 0.2rem;
+            font-size: 1.2rem;
+        }
+        .sr-taiken-time {
+            margin-bottom: 0.5rem;
+            span {
+                display: inline-block;
+                padding: 0.1rem;
+                border: solid 1px black;
+                background-color: white;
+                margin-right: 5px;
+                font-weight: 500;
+            }
+            span:first-of-type {
+                margin-left: 0.5rem;
+            }
+        }
+        .sr-price-taiken {
+            margin-bottom: 0.5rem;
+            span:first-of-type {
+                margin-left: 0.5rem;
+                color: #D94501;
+                font-weight: 600;
+            }
+        }
+        .sr-price-nyukai {
+            margin-bottom: 0.5rem;
+            span:first-of-type {
+                margin-left: 0.5rem;
+                color: #D94501;
+                font-weight: 600;
+            }
+        }
+        .sr-price-joba {
+            margin-bottom: 0.5rem;
+            span:first-of-type {
+                margin-left: 0.5rem;
+                color: #D94501;
+                font-weight: 600;
+            }
+        }
+        .joba-style {
+            margin-bottom: 0.5rem;
+            padding-left: 4.5rem;
+            
+            span {
+                display: inline-block;
+                padding: 0.1rem;
+                border: solid 1px black;
+                background-color: white;
+                margin-right: 5px;
+                font-weight: 500;
+            }
+        }
+        // .joba-style::before {
+        //     content: '\f7ab';
+        //     font-family: "Font Awesome 5 Free";
+        //     font-weight: 600;
+        //     display: inline-block;
+        //     margin-left: 0.2rem;
+        //     font-size: 1.2rem;
+        // }
+        .sr-facility {
+            margin-bottom: 0.5rem;
+            padding-left: 4.5rem;
+            span {
+                display: inline-block;
+                padding: 0.1rem;
+                border: solid 1px black;
+                background-color: white;
+                margin-right: 5px;
+                font-weight: 500;
+            }
+        }
+        .sr-feature {
+            margin-bottom: 0.5rem;
+            padding-left: 4.5rem;
+            span {
+                display: inline-block;
+                padding: 0.1rem;
+                border: solid 1px black;
+                background-color: white;
+                margin-right: 5px;
+                font-weight: 500;
+            }
+        }
+    }
+    .search-result-content-inner-right {
+        width: fit-content;
+        .no_img {
+            text-align: end;
+            @include pc {
+                text-align: center;
+            }
+        }
+        img {
+            width: 260px;
+            height: 180px;
+        }
+        .tyusyaku {
+            margin-top: 1rem;
+            padding-left: 2rem;
+            @include pc {
+                padding-left:0;
+                display: none;
+            }
+            p {
+                font-size: 0.6rem;
+                line-height: 1.1;
+            }
+            p:nth-of-type(2),p:nth-of-type(4) {
+                padding-left: 0.6rem;
+            }
+        }
+    }
+    }
+    
+}
+.tyusyaku-bottom {
+    margin-top: 1rem;
+    padding-left: 2rem;
+    display: none;
+    @include pc {
+        padding-left:0;
+        display: block;
+    }
+    p {
+        font-size: 0.6rem;
+        line-height: 1.1;
+    }
+    p:nth-of-type(2),p:nth-of-type(4) {
+        padding-left: 0.6rem;
+    }
+}

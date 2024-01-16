@@ -1,0 +1,663 @@
+
+@charset "utf-8";
+$sp: 375px; //スマホ
+$pc: 768px; //PC
+$pc1: 1000px; //pc 大画面
+
+@mixin sp {
+    @media (max-width:($sp)) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (max-width:($pc)) {
+        @content;
+    }
+
+}
+
+@mixin pc1 {
+    @media (max-width:($pc1)) {
+        @content;
+    }
+
+}
+
+.searchandfilter p
+{
+	margin-top: 1em;
+	display:inline-block;
+}
+.searchandfilter ul
+{
+	display:inline-block;
+}
+.searchandfilter li
+{
+	list-style: none;
+	display:inline-block;
+	padding-right:10px;
+}
+
+/* If in a widget area make a single column by adding display block  */
+.widget-area .searchandfilter li, .widget-area .searchandfilter p
+{
+	display:block;
+}
+.searchandfilter label
+{
+	display:block;
+}
+.searchandfilter h4
+{
+	margin:15px 0;
+	font-size:16px;
+}
+
+.searchandfilter ul > li > ul:not(.children)
+{
+	margin-left:0;
+}
+
+
+$white:#F8F8F8; //共有の白
+$gray:#F3F3F3; //共通のグレー（背景色）
+$yellow:#FEDC00; //共通の黄色
+$red:#DC2803;//共通の赤
+$brown:#D94501;//共通の茶色
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+html {
+    margin-top: 0 !important;
+    @include pc {
+        font-size: 14px;
+        @include sp {
+            font-size: 12px;
+        }
+    }
+}
+body {
+    font-family: "Yu Gothic", "游ゴシック", "Yugothic", "游ゴシック体","ヒラギノ角ゴ Pro W3", "メイリオ", "sans-serif";
+    font-weight: 500;
+    margin: 0;
+}
+html,body {
+    overflow-x: hidden;
+}
+.body-inner {
+    overflow-x: hidden;
+} 
+li::marker {
+    color: $gray;
+}
+//ページネーション
+
+.sp-ad-header {
+    display: none;
+    list-style: none;
+    img {
+        width: 100%;
+        max-height: 80px;
+    }
+    @include pc {
+        display: block;
+    }
+}
+.links {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 45px;
+    a {
+        height: 50px;
+        width: 50px;
+        border: $yellow 1px solid;
+        margin-right: 20px;
+        display: inline-block;
+        padding-top: 20px;
+        background-color: white;
+        @include pc {
+            height: 35px;
+            width: 35px;
+            padding-top: 12px;
+            margin-right: 15px;
+        }
+    }
+    .current {
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        padding-top: 20px;
+        display: inline-block;
+        border: $yellow solid 1px;
+        background-color: $yellow;
+        color: $white;
+        @include pc {
+            height: 35px;
+            width: 35px;
+            padding-top: 12px;
+        }
+    }
+    span {
+        margin-right: 20px;
+        margin-right: 15px;
+    }
+}
+
+.s-nyukai {
+    input[type="submit"] {
+        background-color: #D94501 !important;
+    }
+}
+
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-around;
+    position:relative;
+    @include pc {
+        display: block;
+    }
+    .sidebar-left,.sidebar-right {
+        position: absolute;
+        top: 0;
+        img {
+            width: 13vw;
+        }
+        li {
+            list-style: none;
+        }
+    }
+    .sidebar-left {
+        left: 0;
+        z-index: 2;
+        @include pc {
+            display: none;
+        }
+    }
+    .sidebar-right {
+        right: 0;
+        @include pc {
+            display:none;
+        }
+    }
+    .center {
+        width: 100vw;
+        background-color: $gray;
+        // margin-top: -33px;
+        .center-inner {
+            padding: 0 10px;
+            width: 70vw;
+            margin: 0 auto;
+            @include pc {
+                width: 100vw;
+                margin: 0;
+                margin-left: 0.2rem;
+            }
+        }
+    }
+    header {
+        display: flex;
+        justify-content: space-around;
+    }
+    .header-logo {
+        height: auto;
+        width: 11vw;
+        // background-color: white;
+        margin-top: 10px;
+        display: block;
+
+        p {
+            font-size: 1.5rem;
+            text-align: center;
+            padding-top: 1rem;
+        }
+    }
+    .header-sns {
+        text-align: center;
+        margin-top: 2vw;
+        a {
+            margin-top: 2vw;
+            width: 50px;
+            @include pc {
+                width: 40px;
+            }
+            span {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    }
+    .top-copy {
+        height: 20vw;
+        width: 100%;
+        padding: 5%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 20px;
+        position:relative;
+        p {
+            font-family: "Yu Gothic";
+            font-weight: bold;
+            font-size: 2.5rem;
+            text-align: left;
+            color: #fff;
+            line-height: 1.4;
+            @include pc1 {
+                font-size: 2rem;
+                @include pc {
+                    font-size: 1.2rem;
+                    @include sp {
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+        }
+        .copy-right{
+            font-size: 0.6rem;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    .search-box {
+        margin:4rem 0 ;
+        h4 {
+            margin: 0.3rem 0;
+        }
+        .tab-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-self: center;
+            .taiken-tab {    
+                background:#C9BE76;
+                width: 9rem;
+                height:1.9rem;
+                border-radius: 1rem 1rem 0px 0px;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+                text-align: center;
+                display: grid;
+                justify-self: center;
+                cursor: pointer;
+                &.is-active {
+                    background: $yellow;
+                    height: 2rem;
+                    cursor: default;
+                }
+                p {
+                    color: #fff;
+                    align-self: center;
+                    font-weight: 700;
+                }
+            }
+            .nyukai-tab {
+                width: 9rem;
+                height: 1.9rem;
+                border-radius: 1rem 1rem 0px 0px;
+                background: #D49C90;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+                text-align: center;
+                display: grid;
+                justify-self: center;
+                cursor: pointer;
+                &.is-active{
+                    background: $brown;
+                    height: 2rem;
+                    cursor: default;
+                }
+                p {
+                    color: #fff;
+                    align-self: center;
+                    font-weight: 700;
+                }
+            }
+        }
+        .search-content {
+            margin: 0 2vw;
+            .btn-wrapper {
+                text-align: end;
+                margin-right: 4vw;
+                margin-bottom: 3px;
+                margin-top: -30px;
+                .clear-btn {
+                    cursor: pointer;
+                    width: 5.5rem;
+                    font-size: 0.7rem;
+                    padding: 2px;
+                }
+            }
+        }
+        .search-content-taiken {
+            background: #ffff;
+            border: $yellow solid 5px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            display: none;
+            padding: 0.8rem;
+            
+            .children {//都道府県を一段下げる
+                margin-left: 1rem;
+            }
+            .cat-item-14 {//北海道
+                display: block;
+            }
+            .cat-item-135 {
+                display: block;
+            }
+            ul {
+                li:nth-of-type(2),li:nth-of-type(3) {
+                    @include pc {
+                        grid-template-columns: 1fr 1.2fr !important;
+
+                    }
+                }
+                li:first-of-type{
+                    h4::after {
+                        content: '\f3c5';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 600;
+                        display: inline-block;
+                        margin-left: 0.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+                li:nth-of-type(2){
+                    h4::after {
+                        content: '\f157';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 600;
+                        display: inline-block;
+                        margin-left: 0.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+                li:nth-of-type(5){
+                    h4::after {
+                        content: '\f7ab';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 600;
+                        display: inline-block;
+                        margin-left: 0.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+                li:nth-of-type(7){
+                    h4::after {
+                        content: '\f4ad';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 600;
+                        display: inline-block;
+                        margin-left: 0.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+                li:last-of-type{
+                    border: none;
+                }
+                li:last-of-type:not(.cat-item) {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+                li {
+                    border-bottom: 3px dotted #333;
+                    padding: 0.5rem 0;
+                    .cat-item {
+                        border: none;
+                        padding: 0;
+                    }
+                }
+                h4 {
+                    align-self: center;
+                }
+                li:not(.cat-item,li:last-of-type) {
+                    display: grid;
+                    grid-template-columns: 1fr 3fr;
+                    @include pc {
+                        grid-template-columns: 1fr;
+                    }
+                }
+                
+            }
+            .postform {
+                text-align: center;
+                color: white;
+                font-weight: 400;
+                font-size: 1rem;
+                background-color: #333333;
+                border: none;
+                border-radius: 1rem;
+                height:100%;
+            }
+            input[type="submit"] {
+                width: 30%;
+                border-radius: 1rem;
+                background: #fedc00;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                font-weight: 600;
+                box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.16);
+                display: flex;
+                justify-self: center;
+                cursor: pointer;
+            }
+            &.active {
+                display: block;
+            }
+        }
+        .search-content-nyukai {
+            background: #ffff;
+            border: $brown solid 5px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            display: none;
+            padding: 0 2vw;
+            &.active {
+                display: block;
+            }
+            .children {//都道府県を一段下げる
+                margin-left: 1rem;
+            }
+            .cat-item-14 {//北海道
+                display: block;
+            }
+            ul {
+                li:nth-of-type(3),li:nth-of-type(4),li:nth-of-type(5),:nth-of-type(6) {
+                    @include pc {
+                        grid-template-columns: 1fr 1.2fr !important;
+
+                    }
+                }
+                li:nth-of-type(2){
+                    h4::after {
+                        content: '\f3c5';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 600;
+                        display: inline-block;
+                        margin-left: 0.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+                li:nth-of-type(3),li:nth-of-type(5),:nth-of-type(6){
+                    h4::after {
+                        content: '\f157';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 600;
+                        display: inline-block;
+                        margin-left: 0.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+                li:nth-of-type(8){
+                    h4::after {
+                        content: '\f7ab';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 600;
+                        display: inline-block;
+                        margin-left: 0.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+                li:nth-of-type(10){
+                    h4::after {
+                        content: '\f4ad';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 600;
+                        display: inline-block;
+                        margin-left: 0.2rem;
+                        font-size: 1.2rem;
+                    }
+                }
+                li:last-of-type{
+                    border: none;
+                }
+                li:last-of-type:not(.cat-item) {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+                li:first-of-type:not(.cat-item) {
+                    display: none;
+                }
+                li {
+                    border-bottom: 3px dotted #333;
+                    padding: 0.5rem 0;
+                    .cat-item {
+                        border: none;
+                        padding: 0;
+                    }
+                }
+                h4 {
+                    align-self: center;
+                }
+                li:not(.cat-item,li:last-of-type) {
+                    display: grid;
+                    grid-template-columns: 1fr 3fr;
+                        @include pc {
+                            grid-template-columns: 1fr;
+                        }
+                }
+                            
+            }
+            .postform {
+                text-align: center;
+                color: white;
+                font-weight: 400;
+                font-size: 1rem;
+                background-color: #333333;
+                border: none;
+                border-radius: 1rem;
+                height:100%;
+            }
+            input[type="submit"] {
+                width: 30%;
+                border-radius: 1rem;
+                background: #fedc00;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                font-weight: 600;
+                box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.16);
+                display: flex;
+                justify-self: center;
+                cursor: pointer;
+                text-align:center;
+                justify-content:center;
+            }
+            &.active {
+                display: block;
+            }
+        }
+
+    }
+}
+
+.blog-new-container {
+    margin-left: 2rem;
+    .blog-new-titile {
+        color: white;
+        font-weight: 600;
+        background-color: $yellow;
+        padding: 0.4rem;
+        font-size: 1.2rem;
+        width: fit-content;
+        margin-bottom: 1rem;
+    }   
+}
+.blog-popu-container {
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+    .blog-popu-titile {
+        color: white;
+        font-weight: 600;
+        background-color: $yellow;
+        padding: 0.4rem;
+        font-size: 1.2rem;
+        width: fit-content;
+        margin-bottom: 1rem;
+    }   
+}
+
+footer {
+    height: 180px;
+    width: 100%;
+    background-color: #333333;
+    .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 3vw;
+        .footer-logo {
+            height: auto;
+            width: 11vw;
+            // background-color: white;
+            margin-top: 10px;
+            display: block;
+            p {
+                font-size: 1.5rem;
+                text-align: center;
+                padding-top: 1rem;
+            }
+        }
+        .footer-nav {
+            ul {
+                display: flex;
+                @include pc {
+                    display: block;
+                }
+                li {
+                    padding:0 1rem;
+                    @include pc {
+                        padding: 0.5rem;
+                    }
+                    a {
+                        color: white;
+                        font-weight: 600;
+                    }
+                }
+                li:not(:nth-child(1)) {
+                    border-left: 1px white solid;
+                    @include pc {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+.footer-copy {
+    text-align: center;
+    color: white;
+}

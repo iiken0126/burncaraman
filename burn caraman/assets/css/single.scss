@@ -1,0 +1,161 @@
+@charset "utf-8";
+$sp: 375px; //スマホ
+$pc: 768px; //PC
+$pc1: 1000px; //pc 大画面
+
+@mixin sp {
+    @media (max-width:($sp)) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (max-width:($pc)) {
+        @content;
+    }
+
+}
+
+@mixin pc1 {
+    @media (max-width:($pc1)) {
+        @content;
+    }
+
+}
+@mixin term {
+    display: inline-block;
+    padding: 3px;
+    border: solid 1px black;
+    background-color: white;
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+$white:#F8F8F8; //共有の白
+$gray:#F3F3F3; //共通のグレー（背景色）
+$yellow:#FEDC00; //共通の黄色
+$red:#DC2803;//共通の赤
+$brown:#D94501;//共通の茶色
+
+$block-margin-bottom :2rem;
+
+.single-title {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.single-date {
+    text-align: right;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+
+.single-top-img,.no-img {
+    margin-bottom: 2rem;
+    text-align: center;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.single-content {
+    img {
+        margin-bottom: $block-margin-bottom;
+        width: 100%;
+    }
+    .wp-block-quote {
+        margin-bottom: $block-margin-bottom;
+        background-color: #F8F8F8;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+    p::before {
+        font-size: 3rem;
+        height: 2rem;
+        margin-right: 1rem;
+        content: '❝';
+        margin-bottom: 0;
+        color: gray;
+    }
+    p {
+        display: flex;
+        margin-bottom: 0;
+    }
+    }
+    ul {
+        margin-bottom: $block-margin-bottom;
+        li {
+            margin-bottom: 0.3rem;
+        }
+        li::before {
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: $yellow;
+            border-radius: 0.6rem;
+            content: '';
+            display: inline-block;
+            margin-right: 0.3rem;
+        }
+    }
+    p {
+        margin-bottom: $block-margin-bottom;
+    }
+    h2.wp-block-heading {
+            margin-bottom: $block-margin-bottom;
+            font-weight: 600;
+    }
+    h3.wp-block-heading {
+        margin-bottom: $block-margin-bottom;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    }
+    h3.wp-block-heading::before {
+        width: 0.5rem;
+        height: 2rem;
+        background-color: $yellow;
+        margin-right: 0.5rem;
+        content: '';
+        display: inline-block;
+    }
+}
+.relavant {
+    margin-bottom: 2rem;
+    .relavant-title {
+        color: white;
+        font-weight: 600;
+        background-color: $yellow;
+        padding: 0.4rem;
+        font-size: 1.2rem;
+        width: fit-content;
+        margin-bottom: 1rem;
+    }
+}
+
+.relavant-post {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 2.5rem;
+    width:fit-content;
+    @include pc {
+        grid-template-columns: 1fr;
+    }
+}
+.relavant-card {
+    width: 300px;
+    height:auto;
+    .relavant-blog-title {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin: 1rem 0;
+    }
+    .relavant-blog-text {
+        font-weight: 500;
+    }
+}
